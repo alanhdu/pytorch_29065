@@ -5,6 +5,7 @@ include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
 find_package(pybind11 REQUIRED)
+FIND_PACKAGE (Threads)
 
 add_executable(example main.cpp)
-target_link_libraries(example PRIVATE pybind11::embed)
+target_link_libraries(example PRIVATE pybind11::embed Threads::Threads)
